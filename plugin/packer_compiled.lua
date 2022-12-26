@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["diffview.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\diffview.nvim",
-    url = "https://github.com/sindrets/diffview.nvim"
-  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\editorconfig.nvim",
@@ -258,6 +253,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
+  },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
