@@ -9,7 +9,6 @@ vim.cmd([[packadd packer.nvim]])
 packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
 	use("nvim-lua/plenary.nvim") -- Common Utilites
-	use("nvim-telescope/telescope.nvim") -- telescope
 	use("szw/vim-maximizer") -- Maximizer panel
 	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
 	use("morhetz/gruvbox") -- gruvbox
@@ -23,6 +22,9 @@ packer.startup(function(use)
 	use("MunifTanjim/eslint.nvim") -- Eslint plugin for neovim
 	use("numToStr/Comment.nvim") -- Comment Plugin for neovim
 	use("gpanders/editorconfig.nvim") -- Integration of EditorConfig for Neovim
+	-- Telescope
+	use("nvim-telescope/telescope.nvim") -- telescope
+	use("nvim-telescope/telescope-file-browser.nvim") -- browser file in telescope
 	-- LSP Support
 	use("neovim/nvim-lspconfig")
 	use("glepnir/lspsaga.nvim")
@@ -51,7 +53,6 @@ packer.startup(function(use)
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse
-	use("sindrets/diffview.nvim") -- For show of change that make of code
 	-- File Explorer
 	use("nvim-neo-tree/neo-tree.nvim")
 	use("MunifTanjim/nui.nvim")
