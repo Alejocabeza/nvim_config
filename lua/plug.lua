@@ -10,6 +10,7 @@ packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
 	use("nvim-lua/plenary.nvim") -- Common Utilites
 	use("szw/vim-maximizer") -- Maximizer panel
+    use("ellisonleao/gruvbox.nvim") --- Theme gruvbox
 	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
 	--[[ use("morhetz/gruvbox") -- gruvbox ]]
 	use("mbbill/undotree")
@@ -53,7 +54,4 @@ packer.startup(function(use)
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse
-	-- File Explorer
-	use("nvim-neo-tree/neo-tree.nvim")
-	use("MunifTanjim/nui.nvim")
 end)
