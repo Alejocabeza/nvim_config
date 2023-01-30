@@ -10,9 +10,8 @@ packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Packer
 	use("nvim-lua/plenary.nvim") -- Common Utilites
 	use("szw/vim-maximizer") -- Maximizer panel
-    use("ellisonleao/gruvbox.nvim") --- Theme gruvbox
 	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
-	--[[ use("morhetz/gruvbox") -- gruvbox ]]
+	use("Mofiqul/dracula.nvim") -- dracula them
 	use("mbbill/undotree")
 	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -54,4 +53,6 @@ packer.startup(function(use)
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse
+	-- DevContainers
+	use("https://codeberg.org/esensar/nvim-dev-container")
 end)
