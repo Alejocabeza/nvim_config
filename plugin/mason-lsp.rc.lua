@@ -12,7 +12,7 @@ mason_lsp.setup({
 		"tsserver",
 		"vimls",
 		"yamlls",
-		"sumneko_lua",
+		"lua_ls",
 		"pyright",
 	},
 })

@@ -1,7 +1,5 @@
 local keymap = vim.keymap
 
-vim.g.mapleader = " "
-
 keymap.set("n", "x", '"_x')
 keymap.set("n", ",", ":Ex<CR>")
 
@@ -26,10 +24,10 @@ keymap.set("n", "ss", ":split<Return><C-w>w", { silent = true })
 keymap.set("n", "sv", ":vsplit<Return><C-w>w", { silent = true })
 
 -- Move Window
-keymap.set("", "<Leader>h", "<C-w>h")
-keymap.set("", "<Leader>k", "<C-w>k")
-keymap.set("", "<Leader>j", "<C-w>j")
-keymap.set("", "<Leader>l", "<C-w>l")
+keymap.set("", "sh", "<C-w>h")
+keymap.set("", "sk", "<C-w>k")
+keymap.set("", "sj", "<C-w>j")
+keymap.set("", "sl", "<C-w>l")
 
 -- Resize Window
 keymap.set("n", "<right>", "<C-w><")
@@ -38,4 +36,4 @@ keymap.set("n", "<up>", "<C-w>+")
 keymap.set("n", "<down>", "<C-w>-")
 
 -- install plugins
-keymap.set("n", "ii", ":PackerSync<CR>")
+keymap.set("n", "ii", ":PackerInstall<CR>")
