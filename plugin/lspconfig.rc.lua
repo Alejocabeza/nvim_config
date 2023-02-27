@@ -17,7 +17,7 @@ local enable_format_on_save = function(_, bufnr)
 	})
 end
 
-local enable_format = function(client)
+local enable_format = function(client, _)
 	if client.resolved_capabilities.document_formatting then
 		vim.api.nvim_command([[augroup Format]])
 		vim.api.nvim_command([[autocmd! * <buffer>]])
@@ -77,7 +77,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 nvim_lsp.pyright.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		enable_format(client)
+		enable_format(client, bufnr)
 	end,
 	capabilities = capabilities,
 	filetypes = { "python" },
@@ -98,7 +98,7 @@ nvim_lsp.tsserver.setup({
 nvim_lsp.intelephense.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		enable_format(client)
+		enable_format(client, bufnr)
 	end,
 	filetypes = { "php" },
 	capabilities = capabilities,
@@ -107,7 +107,7 @@ nvim_lsp.intelephense.setup({
 nvim_lsp.vimls.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		enable_format(client)
+		enable_format(client, bufnr)
 	end,
 	filetypes = { "vim" },
 	capabilities = capabilities,
@@ -116,7 +116,7 @@ nvim_lsp.vimls.setup({
 nvim_lsp.yamlls.setup({
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)
-		enable_format(client)
+		enable_format(client, bufnr)
 	end,
 	filetypes = { "yaml", "yaml.docker-compose", "yml" },
 	capabilities = capabilities,
