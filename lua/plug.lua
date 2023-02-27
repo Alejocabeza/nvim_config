@@ -48,6 +48,8 @@ packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow") -- Color of pairs
 	-- LSP-null
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	-- php
+	use("yuchanns/phpfmt.nvim")
 	-- Mason
 	use("williamboman/mason.nvim")
 	use("jayp0521/mason-null-ls.nvim") -- Use Neovim as a Built-in for LSP
