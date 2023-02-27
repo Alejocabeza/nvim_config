@@ -17,6 +17,15 @@ local enable_format_on_save = function(_, bufnr)
 	})
 end
 
+local enable_format = function(client, _)
+	if client.server_capabilities.document_formatting then
+		vim.api.nvim_command([[augroup Format]])
+		vim.api.nvim_command([[autocmd! * <buffer>]])
+		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
+		vim.api.nvim_command([[augroup END]])
+	end
+end
+
 local on_attach = function(client, bufnr)
 	-- Mappings.
 	local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -33,13 +42,6 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gsl", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 	vim.keymap.set("n", "gsc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
 	vim.keymap.set("n", "go", "<cmd>LSoutlineToggle<CR>", opts)
-
-	if client.server_capabilities.document_formatting then
-		vim.api.nvim_command([[augroup Format]])
-		vim.api.nvim_command([[autocmd! * <buffer>]])
-		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
-		vim.api.nvim_command([[augroup END]])
-	end
 end
 
 protocol.CompletionItemKind = {

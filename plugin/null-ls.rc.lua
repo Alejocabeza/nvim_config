@@ -29,12 +29,14 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
+		formatting.phpcsfixer, -- php formatter
 		diagnostics.eslint_d.with({ -- js/ts linter
 			-- only enable eslint if root has .eslintrc.js (not in youtube nvim video)
 			condition = function(utils)
 				return utils.root_has_file(".eslintrc.js") -- change file extension if you use something else
 			end,
 		}),
+		diagnostics.php.with({}),
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)
@@ -49,7 +51,6 @@ null_ls.setup({
 			})
 		end
 	end,
-
 	vim.api.nvim_create_user_command("DisabledLspFormatting", function()
 		vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })
 	end, { nargs = 0 }),
