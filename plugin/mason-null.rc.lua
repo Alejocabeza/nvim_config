@@ -5,7 +5,7 @@ if not mason_null_ls_status then
 	return
 end
 
-mason_null_ls.setup({
+mason_null_ls.setup{
 	-- list of formatters & linters for mason to install
 	ensure_installed = {
 		"prettier", -- ts/js formatter
@@ -15,4 +15,4 @@ mason_null_ls.setup({
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
-})
+}

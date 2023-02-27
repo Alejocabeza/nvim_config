@@ -60,24 +60,31 @@ vim.keymap.set("n", "sf", function()
 		layout_config = { height = 40 },
 	})
 end)
+
 vim.keymap.set("n", ";f", function()
 	builtin.find_files({ no_ignore = false, hidden = true })
 end)
+
 vim.keymap.set("n", ";l", function()
 	builtin.live_grep()
 end)
+
 vim.keymap.set("n", ";b", function()
 	builtin.buffers()
 end)
+
 vim.keymap.set("n", ";t", function()
 	builtin.help_tags()
 end)
+
 vim.keymap.set("n", ";r", function()
 	builtin.resume()
 end)
+
 vim.keymap.set("n", ";e", function()
 	builtin.diagnostics()
 end)
+
 -- Command for git
 vim.keymap.set("n", ";gc", "<cmd>Telescope git_commits<cr>")
 vim.keymap.set("n", ";gfc", "<cmd>Telescope git_bcommits<cr>")

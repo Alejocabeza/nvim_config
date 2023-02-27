@@ -12,7 +12,7 @@ packer.startup(function(use)
 	use("szw/vim-maximizer") -- Maximizer panel
 	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
 	--[[ use("navarasu/onedark.nvim") -- Onedark Theme ]]
-	--[[ use("Mofiqul/dracula.nvim") -- dracula Theme ]]
+	use("Mofiqul/dracula.nvim") -- dracula Theme
 	use("mbbill/undotree")
 	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -29,8 +29,6 @@ packer.startup(function(use)
 	-- LSP Support
 	use("neovim/nvim-lspconfig")
 	use("glepnir/lspsaga.nvim")
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
 	-- Autocompletion
 	use("hrsh7th/nvim-cmp")
 	use("hrsh7th/cmp-buffer")
@@ -50,7 +48,10 @@ packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow") -- Color of pairs
 	-- LSP-null
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	-- Mason
+	use("williamboman/mason.nvim")
 	use("jayp0521/mason-null-ls.nvim") -- Use Neovim as a Built-in for LSP
+	use("williamboman/mason-lspconfig.nvim")
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse

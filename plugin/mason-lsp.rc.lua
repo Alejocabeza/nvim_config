@@ -3,7 +3,7 @@ if not status then
 	return
 end
 
-mason_lsp.setup({
+mason_lsp.setup {
 	ensure_installed = {
 		"bashls",
 		"diagnosticls",
@@ -15,4 +15,5 @@ mason_lsp.setup({
 		"lua_ls",
 		"pyright",
 	},
-})
+    atomatic_installation=true
+}
