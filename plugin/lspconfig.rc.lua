@@ -17,6 +17,15 @@ local enable_format_on_save = function(_, bufnr)
 	})
 end
 
+local enable_format = function(client)
+	if client.resolved_capabilities.document_formatting then
+		vim.api.nvim_command([[augroup Format]])
+		vim.api.nvim_command([[autocmd! * <buffer>]])
+		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
+		vim.api.nvim_command([[augroup END]])
+	end
+end
+
 local on_attach = function(client, bufnr)
 	-- Mappings.
 	local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -66,7 +75,10 @@ protocol.CompletionItemKind = {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 nvim_lsp.pyright.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format(client)
+	end,
 	capabilities = capabilities,
 	filetypes = { "python" },
 })
@@ -84,19 +96,28 @@ nvim_lsp.tsserver.setup({
 })
 
 nvim_lsp.intelephense.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format(client)
+	end,
 	filetypes = { "php" },
 	capabilities = capabilities,
 })
 
 nvim_lsp.vimls.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format(client)
+	end,
 	filetypes = { "vim" },
 	capabilities = capabilities,
 })
 
 nvim_lsp.yamlls.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format(client)
+	end,
 	filetypes = { "yaml", "yaml.docker-compose", "yml" },
 	capabilities = capabilities,
 })
