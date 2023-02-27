@@ -17,7 +17,7 @@ packer.startup(function(use)
 	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
 	use("hoob3rt/lualine.nvim") -- StatusLine
-	use("akinsho/nvim-bufferline.lua") -- BufferLine
+	--[[ use("akinsho/nvim-bufferline.lua") -- BufferLine ]]
 	use("kyazdani42/nvim-web-devicons") -- File icons
 	use("MunifTanjim/prettier.nvim") -- Prettier plugin for Neovim's built-in LSP client
 	use("MunifTanjim/eslint.nvim") -- Eslint plugin for neovim

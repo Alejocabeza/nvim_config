@@ -5,6 +5,18 @@ end
 
 local protocol = require("vim.lsp.protocol")
 
+local augroup_format = vim.api.nvim_create_augroup("Format", { clear = true })
+local enable_format_on_save = function(_, bufnr)
+	vim.api.nvim_clear_autocmds({ group = augroup_format, buffer = bufnr })
+	vim.api.nvim_create_autocmd("BufWritePre", {
+		group = augroup_format,
+		buffer = bufnr,
+		callback = function()
+			vim.lsp.buf.format({ bufnr = bufnr })
+		end,
+	})
+end
+
 local on_attach = function(client, bufnr)
 	-- Mappings.
 	local opts = { noremap = true, silent = true, buffer = bufnr }
@@ -90,7 +102,11 @@ nvim_lsp.yamlls.setup({
 })
 
 nvim_lsp.lua_ls.setup({
-	on_attach = on_attach,
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format_on_save(client, bufnr)
+	end,
 	settings = {
 		Lua = {
 			diagnostics = {
