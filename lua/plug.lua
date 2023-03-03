@@ -59,4 +59,5 @@ packer.startup(function(use)
 	use("dinhhuy258/git.nvim") -- For git blame & browse
 	-- Live Server
 	use("manzeloth/live-server")
+	use("tpope/vim-surround")
 end)
