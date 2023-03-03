@@ -109,6 +109,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   ["editorconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\editorconfig.nvim",
@@ -138,6 +143,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["live-server"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\live-server",
+    url = "https://github.com/manzeloth/live-server"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -179,11 +189,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-bufferline.lua",
-    url = "https://github.com/akinsho/nvim-bufferline.lua"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
@@ -224,15 +229,15 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
-  ["onedark.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
-    url = "https://github.com/navarasu/onedark.nvim"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["phpfmt.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\phpfmt.nvim",
+    url = "https://github.com/yuchanns/phpfmt.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,

@@ -17,14 +17,11 @@ local enable_format_on_save = function(_, bufnr)
 	})
 end
 
-local enable_format = function(client, _)
-	if client.server_capabilities.document_formatting then
-		vim.api.nvim_command([[augroup Format]])
-		vim.api.nvim_command([[autocmd! * <buffer>]])
-		vim.api.nvim_command([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]])
-		vim.api.nvim_command([[augroup END]])
-	end
-end
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "ee", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "ed", vim.diagnostic.goto_prev, opts)
+vim.keymap.set("n", "eD", vim.diagnostic.goto_next, opts)
+vim.keymap.set("n", "eq", vim.diagnostic.setloclist, opts)
 
 local on_attach = function(client, bufnr)
 	-- Mappings.
@@ -35,7 +32,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gd", "<Cmd>Lspsaga peek_definition<CR>", opts)
 	vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts)
 	vim.keymap.set("n", "ga", "<cmd>Lspsaga code_action<CR>", opts)
-	vim.keymap.set("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
+	vim.keymap.set("n", "<cmd>Lspsaga rename<CR>", "gr", opts)
 	vim.keymap.set("n", "<C-K>", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 	vim.keymap.set("n", "<C-J>", "<Cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", opts)
@@ -43,6 +40,10 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "gsc", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts)
 	vim.keymap.set("n", "go", "<cmd>LSoutlineToggle<CR>", opts)
 end
+
+local lsp_flags = {
+	debounce_text_changes = 150,
+}
 
 protocol.CompletionItemKind = {
 	"", -- Text
@@ -76,44 +77,50 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 nvim_lsp.pyright.setup({
 	on_attach = on_attach,
+	flags = lsp_flags,
 	capabilities = capabilities,
 	filetypes = { "python" },
 })
 
 nvim_lsp.flow.setup({
 	on_attach = on_attach,
+	flags = lsp_flags,
 	capabilities = capabilities,
 })
 
 nvim_lsp.tsserver.setup({
 	on_attach = on_attach,
+	flags = lsp_flags,
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescriptreact", "typescript", "typescript.jsx" },
 	cmd = { "typescript-language-server", "--stdio" },
 	capabilities = capabilities,
 })
 
 nvim_lsp.intelephense.setup({
-	on_attach = on_attach,
-	filetypes = { "php" },
+	flags = lsp_flags,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format_on_save(client, bufnr)
+	end,
 	capabilities = capabilities,
 })
 
 nvim_lsp.vimls.setup({
-	on_attach = function(client, bufnr)
-		on_attach(client, bufnr)
-		enable_format(client, bufnr)
-	end,
+	flags = lsp_flags,
+	on_attach = on_attach,
 	filetypes = { "vim" },
 	capabilities = capabilities,
 })
 
 nvim_lsp.yamlls.setup({
+	flags = lsp_flags,
 	on_attach = on_attach,
 	filetypes = { "yaml", "yaml.docker-compose", "yml" },
 	capabilities = capabilities,
 })
 
 nvim_lsp.lua_ls.setup({
+	flags = lsp_flags,
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
 		on_attach(client, bufnr)

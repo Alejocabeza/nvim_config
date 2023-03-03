@@ -36,4 +36,5 @@ keymap.set("n", "<up>", "<C-w>+")
 keymap.set("n", "<down>", "<C-w>-")
 
 -- install plugins
-keymap.set("n", "ii", ":PackerInstall<CR>")
+keymap.set("n", "ai", ":PackerSync<CR>")
+keymap.set("n", "aii", ":PackerInstall<CR>")

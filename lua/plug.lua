@@ -57,4 +57,6 @@ packer.startup(function(use)
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("dinhhuy258/git.nvim") -- For git blame & browse
+	-- Live Server
+	use("manzeloth/live-server")
 end)
