@@ -60,4 +60,6 @@ packer.startup(function(use)
 	-- Live Server
 	use("manzeloth/live-server")
 	use("tpope/vim-surround")
+	-- preview markdown
+	use("iamcco/markdown-preview.nvim")
 end)
