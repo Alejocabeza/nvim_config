@@ -164,6 +164,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason-lspconfig.nvim",
@@ -234,11 +239,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  ["phpfmt.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\phpfmt.nvim",
-    url = "https://github.com/yuchanns/phpfmt.nvim"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
@@ -268,6 +268,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-maximizer",
     url = "https://github.com/szw/vim-maximizer"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "C:\\Users\\aleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   },
   ["vim-visual-multi"] = {
     loaded = true,

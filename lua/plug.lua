@@ -11,8 +11,7 @@ packer.startup(function(use)
 	use("nvim-lua/plenary.nvim") -- Common Utilites
 	use("szw/vim-maximizer") -- Maximizer panel
 	use("lukas-reineke/indent-blankline.nvim") -- Line Indent
-	--[[ use("navarasu/onedark.nvim") -- Onedark Theme ]]
-	use("Mofiqul/dracula.nvim") -- dracula Theme
+	use({ "ellisonleao/gruvbox.nvim" })
 	use("mbbill/undotree")
 	use({ "mg979/vim-visual-multi", branch = "master" }) -- Cursor Multi Edit for Neovim
 	use("onsails/lspkind-nvim") -- vscode-like pictograms
@@ -48,8 +47,6 @@ packer.startup(function(use)
 	use("p00f/nvim-ts-rainbow") -- Color of pairs
 	-- LSP-null
 	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-	-- php
-	use("yuchanns/phpfmt.nvim")
 	-- Mason
 	use("williamboman/mason.nvim")
 	use("jayp0521/mason-null-ls.nvim") -- Use Neovim as a Built-in for LSP
