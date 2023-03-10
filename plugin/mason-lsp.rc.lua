@@ -3,7 +3,7 @@ if not status then
 	return
 end
 
-mason_lsp.setup {
+mason_lsp.setup({
 	ensure_installed = {
 		"bashls",
 		"diagnosticls",
@@ -14,6 +14,13 @@ mason_lsp.setup {
 		"yamlls",
 		"lua_ls",
 		"pyright",
+		"tailwindcss",
+		"docker_compose_language_service",
+		"clangd",
+		"cssls",
+		"html",
+		"eslint",
+		"taplo",
 	},
-    atomatic_installation=true
-}
+	automatic_installation = false,
+})

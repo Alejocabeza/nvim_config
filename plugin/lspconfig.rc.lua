@@ -75,11 +75,101 @@ protocol.CompletionItemKind = {
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
+nvim_lsp.taplo.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = { "toml" },
+})
+
+nvim_lsp.html.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = { "html" },
+})
+
+nvim_lsp.clangd.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+})
+
+nvim_lsp.cssls.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = { "css", "scss", "less" },
+})
+
 nvim_lsp.pyright.setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
 	capabilities = capabilities,
 	filetypes = { "python" },
+})
+
+nvim_lsp.tailwindcss.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = {
+		"aspnetcorerazor",
+		"astro",
+		"astro-markdown",
+		"blade",
+		"clojure",
+		"django-html",
+		"htmldjango",
+		"edge",
+		"eelixir",
+		"elixir",
+		"ejs",
+		"erb",
+		"eruby",
+		"gohtml",
+		"haml",
+		"handlebars",
+		"hbs",
+		"html",
+		"html-eex",
+		"heex",
+		"jade",
+		"leaf",
+		"liquid",
+		"markdown",
+		"mdx",
+		"mustache",
+		"njk",
+		"nunjucks",
+		"php",
+		"razor",
+		"slim",
+		"twig",
+		"css",
+		"less",
+		"postcss",
+		"sass",
+		"scss",
+		"stylus",
+		"sugarss",
+		"javascript",
+		"javascriptreact",
+		"reason",
+		"rescript",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte",
+	},
+})
+
+nvim_lsp.docker_compose_language_service.setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+	capabilities = capabilities,
+	filetypes = { "yaml" },
 })
 
 nvim_lsp.flow.setup({
@@ -109,7 +199,7 @@ nvim_lsp.vimls.setup({
 	flags = lsp_flags,
 	on_attach = on_attach,
 	filetypes = { "vim" },
-	capabilities = capabilities,
+	capabilitbes = capabilities,
 })
 
 nvim_lsp.yamlls.setup({
