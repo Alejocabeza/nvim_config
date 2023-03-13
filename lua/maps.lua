@@ -36,4 +36,5 @@ keymap.set("n", "<up>", "<C-w>+")
 keymap.set("n", "<down>", "<C-w>-")
 
 -- install plugins
-keymap.set("n", "<C-F7>", ":PackerSync<CR>")
+keymap.set("n", "sy", ":PackerSync<CR>")
+keymap.set("n", "si", ":PackerInstall<CR>")
