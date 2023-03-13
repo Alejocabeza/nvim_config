@@ -83,7 +83,10 @@ nvim_lsp.taplo.setup({
 })
 
 nvim_lsp.html.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format_on_save(client, bufnr)
+	end,
 	flags = lsp_flags,
 	capabilities = capabilities,
 	filetypes = { "html" },
@@ -97,7 +100,10 @@ nvim_lsp.clangd.setup({
 })
 
 nvim_lsp.cssls.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format_on_save(client, bufnr)
+	end,
 	flags = lsp_flags,
 	capabilities = capabilities,
 	filetypes = { "css", "scss", "less" },
@@ -179,7 +185,10 @@ nvim_lsp.flow.setup({
 })
 
 nvim_lsp.tsserver.setup({
-	on_attach = on_attach,
+	on_attach = function(client, bufnr)
+		on_attach(client, bufnr)
+		enable_format_on_save(client, bufnr)
+	end,
 	flags = lsp_flags,
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescriptreact", "typescript", "typescript.jsx" },
 	cmd = { "typescript-language-server", "--stdio" },
